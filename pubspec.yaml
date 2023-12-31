@@ -1,0 +1,78 @@
+name: my_base_code
+description: A new Flutter project.
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.0.1 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  intl: ^0.18.1
+  shimmer: ^3.0.0
+  image_picker: ^1.0.1
+  validators: ^3.0.0
+  url_launcher: ^6.1.12
+  flutter_svg: ^2.0.7
+  cached_network_image: ^3.2.3
+  # flutter_native_splash: ^2.3.1
+  pin_code_fields: ^8.0.1
+  images_picker: ^1.2.11
+  permission_handler: ^10.4.3
+  clipboard: ^0.1.3
+  # Noti
+  firebase_core: ^2.17.0
+  firebase_messaging: ^14.6.9
+  flutter_local_notifications: ^16.1.0
+  firebase_auth: ^4.10.1
+
+  # Login Social
+  # flutter_facebook_auth: ^6.0.3
+  google_sign_in: ^6.1.6
+  flutter_login_facebook: ^1.9.0
+  sign_in_with_apple: ^5.0.0
+
+  # State Management
+  bloc: ^7.0.0
+  flutter_bloc: ^7.0.0
+  equatable: ^2.0.5
+  # Connect Server
+  http: ^1.1.0
+  dio: ^5.3.0
+  envify: ^2.0.3
+  connectivity_plus: ^5.0.1
+  json_annotation: ^4.8.1
+  pretty_dio_logger: ^1.3.1
+
+  # run this command to generate: flutter packages pub run build_runner build
+  injectable: ^2.1.2
+  get_it: ^7.6.4
+  # Local Storage
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  flutter_staggered_grid_view: ^0.7.0
+  flutter_widget_from_html: ^0.14.6
+  retrofit: ^4.0.3
+  rxdart: ^0.27.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  analyzer: ^5.9.0
+  injectable_generator: ^2.1.6
+  flutter_lints: ^2.0.0
+  build_runner: ^2.2.0
+  retrofit_generator: ^8.0.6
+  json_serializable: ^6.6.2
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/icons/
+    - assets/images/
+    - assets/gifs/
