@@ -1,20 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:my_base_code/modules/dependency_injection/injector.dart';
+import 'package:my_base_code/routers/app_router.dart';
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
 void main() {
-  runApp(const MainApp());
+  configureInjection();
+  runApp(const MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return MaterialApp(
+      title: 'Flutter Code Base',
+      navigatorKey: navigatorKey,
+      navigatorObservers: [routeObserver],
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      initialRoute: '/',
+      onGenerateRoute: routes(),
     );
   }
 }
