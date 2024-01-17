@@ -25,10 +25,4 @@ class BaseResp<T> {
     code = json['code'];
     message = json['message'];
   }
-
-  Map<String, dynamic> toJson() => {
-        'code': code,
-        'message': message,
-        'data': data,
-      };
 }

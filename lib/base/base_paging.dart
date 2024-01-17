@@ -28,5 +28,8 @@ class BasePagging<T> {
     } catch (e) {
       debugPrint('BasePagging.fromJson: $e of ${T.toString()}');
     }
+    totalPage = json['total_page'] as int?;
+    currentPage = json['current_page'] as int?;
+    totalRecord = json['total_record'] as int?;
   }
 }
