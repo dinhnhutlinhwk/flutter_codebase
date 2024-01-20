@@ -1,9 +1,13 @@
-import 'dart:math';
 import 'dart:ui';
+import 'dart:math';
+
+double devicePixelRatio =
+    PlatformDispatcher.instance.views.first.devicePixelRatio;
 
 ///The number of device pixels for each logical pixel.
 
-Size get size => PlatformDispatcher.instance.views.first.physicalSize;
+Size get size =>
+    PlatformDispatcher.instance.views.first.physicalSize / devicePixelRatio;
 
 const designWidth = 375;
 const desginHeight = 812;

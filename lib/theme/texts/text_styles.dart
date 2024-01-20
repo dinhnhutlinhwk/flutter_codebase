@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_base_code/theme/colors/app_color.dart';
 import 'package:my_base_code/utils/sizer.dart';
+import 'package:my_base_code/theme/colors/app_color.dart';
 
 const TextStyle fontApp = TextStyle(
-  fontFamily: 'Roboto',
+  fontFamily: 'Poppins',
   fontSize: 14,
   fontWeight: FontWeight.w400,
   fontStyle: FontStyle.normal,
@@ -106,4 +106,6 @@ extension TextStyleExt on TextStyle {
   TextStyle get grey => copyWith(color: Colors.grey);
   TextStyle get backgroundColor => copyWith(color: const Color(0xff292152));
   TextStyle get blue => copyWith(color: const Color(0xff2D7DFF));
+  TextStyle get subText => copyWith(color: const Color(0xff979797));
+  TextStyle get text4 => copyWith(color: const Color(0xff98f3ff));
 }

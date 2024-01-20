@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:my_base_code/theme/colors/app_color.dart';
+import 'package:app_fast_multipay/theme/colors/app_color.dart';
 
 class ImageView {
   static Widget assetImage(String url,
@@ -67,12 +67,11 @@ class SVGView {
     Color? color,
     double? width,
     double? height,
-    BoxFit fit = BoxFit.contain,
+    BoxFit fit = BoxFit.cover,
   }) {
     return SvgPicture.asset(
       name,
-      colorFilter:
-          ColorFilter.mode(color ?? Colors.transparent, BlendMode.srcIn),
+      colorFilter: ColorFilter.mode(color ?? Colors.white, BlendMode.srcIn),
       width: width,
       height: height,
       fit: fit,
