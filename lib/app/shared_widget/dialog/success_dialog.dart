@@ -4,7 +4,7 @@ import 'package:my_base_code/core/assets/assets.dart';
 import 'package:my_base_code/core/assets/assets_view.dart';
 import 'package:my_base_code/core/theme/colors/app_color.dart';
 import 'package:my_base_code/core/theme/texts/text_styles.dart';
-import 'package:my_base_code/presentation/shared_widget/button/gradient_button.dart';
+import 'package:my_base_code/app/shared_widget/button/gradient_button.dart';
 
 class SuccessDialog extends StatelessWidget {
   final String? title;

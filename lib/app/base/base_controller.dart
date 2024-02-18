@@ -1,12 +1,15 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 import 'package:my_base_code/core/configs/logger_config.dart';
 import 'package:my_base_code/data/models/auth/user.dart';
-import 'package:my_base_code/presentation/common_controller/app_controller.dart';
+import 'package:my_base_code/app/common_controller/app_controller.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 abstract class BaseController extends GetxController {
   final Logger logger = LoggerConfig.instance.logger;
+  @protected
+  final List<Worker> workers = [];
 
   AppLocalizations get l10n => AppLocalizations.of(Get.context!)!;
   final _isLoading = false.obs;
@@ -57,5 +60,13 @@ abstract class BaseController extends GetxController {
         onComplete();
       }
     });
+  }
+
+  @override
+  void onClose() {
+    for (var worker in workers) {
+      worker.dispose();
+    }
+    super.onClose();
   }
 }

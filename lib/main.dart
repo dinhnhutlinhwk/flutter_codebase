@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_base_code/app/bindings/init_binding.dart';
 import 'package:my_base_code/core/configs/locale_config.dart';
 import 'package:my_base_code/core/services/dependency_injection/injector.dart';
-import 'package:my_base_code/presentation/routers/app_router.dart';
+import 'package:my_base_code/app/routers/app_router.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: LocaleConfig.supportedLocales,
       locale: Get.deviceLocale,
+      initialBinding: InitBinding(),
       builder: (context, child) {
         return MediaQuery(
           data: MediaQuery.of(context)

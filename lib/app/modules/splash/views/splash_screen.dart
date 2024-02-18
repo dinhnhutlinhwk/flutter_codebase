@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_base_code/presentation/base/base_view.dart';
-import 'package:my_base_code/presentation/modules/splash/controllers/splash_controller.dart';
+import 'package:my_base_code/app/base/base_view.dart';
+import 'package:my_base_code/app/modules/splash/controllers/splash_controller.dart';
 
 class SplashScreen extends BaseView<SplashController> {
   const SplashScreen({Key? key}) : super(key: key);

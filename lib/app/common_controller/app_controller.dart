@@ -3,10 +3,11 @@ import 'package:get/get.dart';
 import 'package:my_base_code/data/models/auth/user.dart';
 import 'package:my_base_code/core/services/dependency_injection/injector.dart';
 import 'package:my_base_code/core/services/storage/hive_storage.dart';
+import 'package:my_base_code/app/base/base_controller.dart';
 
-class AppController extends GetxController {
+class AppController extends BaseController {
   final HiveStorage _hiveStorage = getIt<HiveStorage>();
-  final List<Worker> _workers = [];
+
   final Completer<void> _completer = Completer<void>();
 
   final _isDarkMode = false.obs;
@@ -36,7 +37,7 @@ class AppController extends GetxController {
           _hiveStorage.deleteUser();
         }
       });
-      _workers.add(userWorker);
+      workers.add(userWorker);
     } finally {
       _completer.complete();
     }
@@ -44,7 +45,7 @@ class AppController extends GetxController {
 
   @override
   void onClose() {
-    for (var worker in _workers) {
+    for (var worker in workers) {
       worker.dispose();
     }
     super.onClose();
