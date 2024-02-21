@@ -6,12 +6,10 @@ import 'package:injectable/injectable.dart';
 import 'package:my_base_code/core/configs/duration_config.dart';
 import 'package:my_base_code/env.dart';
 
-Dio initDioClient(
-  Env env,
-) {
+Dio initDioClient() {
   final dio = Dio();
 
-  dio.options.baseUrl = env.baseUrl;
+  dio.options.baseUrl = Env.baseUrl;
   dio.options.connectTimeout = DurationConfig.connectTimeout;
   dio.options.receiveTimeout = DurationConfig.receiveTimeout;
 
@@ -23,7 +21,7 @@ Dio initDioClient(
               (X509Certificate cert, String host, int port) => true;
   }
 
-  if (env.environment == Environment.dev) {
+  if (Env.environment == Environment.dev) {
     dio.interceptors.add(LogInterceptor(
       request: true,
       requestBody: true,

@@ -1,8 +1,7 @@
 import 'package:envify/envify.dart';
 import 'package:injectable/injectable.dart';
 
-@Envify()
 abstract class Env {
-  final String baseUrl = '';
-  final String environment = Environment.dev;
+  static const String baseUrl = 'http://103.11.199.134:8003';
+  static const String environment = Environment.dev;
 }

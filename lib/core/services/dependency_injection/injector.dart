@@ -7,7 +7,7 @@ final GetIt getIt = GetIt.instance;
 
 @InjectableInit(
   initializerName: r'$initGetIt', // default
-  preferRelativeImports: true, // default
+  // preferRelativeImports: true, // default
   asExtension: false, // default
 )
 Future<void> configureInjection() async => $initGetIt(getIt);

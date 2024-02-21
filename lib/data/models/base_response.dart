@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_base_code/core/exceptions/app_exception.dart';
+import 'package:my_base_code/core/exceptions/json_format_exception.dart';
+import 'package:my_base_code/data/models/post_model.dart';
 
 class BaseResp<T> {
   int? code;
@@ -20,7 +23,15 @@ class BaseResp<T> {
           data = json['data'] as T;
           break;
         case List:
-          data = json['data'] as T;
+          data = List.from(json['data']) as T;
+          break;
+        case PostModel:
+          data = PostModel.fromJson(json['data']) as T;
+          break;
+        case const (List<PostModel>):
+          data = (json['data'] as List)
+              .map((e) => PostModel.fromJson(e))
+              .toList() as T;
           break;
 
         default:
@@ -28,10 +39,11 @@ class BaseResp<T> {
           break;
       }
     } catch (e) {
-      debugPrint('BaseResp.fromJson: $e of ${T.toString()}');
+      AppException message = JsonFormatException(e.toString());
+      throw message;
     }
 
-    code = json['code'];
+    code = json['status_code'];
     message = json['message'];
   }
 }

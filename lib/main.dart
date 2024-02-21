@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:my_base_code/app/bindings/init_binding.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:my_base_code/presentation/bindings/init_binding.dart';
 import 'package:my_base_code/core/configs/locale_config.dart';
 import 'package:my_base_code/core/services/dependency_injection/injector.dart';
-import 'package:my_base_code/app/routers/app_router.dart';
+import 'package:my_base_code/presentation/routers/app_router.dart';
+import 'package:my_base_code/core/services/storage/hive_key.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  await Hive.openBox(StorageKey.setting);
   configureInjection();
   runApp(const MyApp());
 }

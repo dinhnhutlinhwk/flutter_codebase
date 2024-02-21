@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_base_code/app/base/base_controller.dart';
+import 'package:my_base_code/presentation/base/base_controller.dart';
 import 'dart:ui' as ui;
 
 abstract class BaseView<Controller extends BaseController>

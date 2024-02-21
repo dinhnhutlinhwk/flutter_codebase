@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_base_code/core/theme/colors/gradient.dart';
-import 'package:my_base_code/app/shared_widget/button/touch_operator.dart';
+import 'package:my_base_code/presentation/shared_widget/button/touch_operator.dart';
 
 class GradientButton extends StatelessWidget {
   final Widget? child;

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:my_base_code/data/models/auth/user.dart';
 import 'package:my_base_code/core/services/dependency_injection/injector.dart';
 import 'package:my_base_code/core/services/storage/hive_storage.dart';
-import 'package:my_base_code/app/base/base_controller.dart';
+import 'package:my_base_code/presentation/base/base_controller.dart';
 
 class AppController extends BaseController {
   final HiveStorage _hiveStorage = getIt<HiveStorage>();
