@@ -28,6 +28,5 @@ class RouterName {
   RouterName._();
 
   static const String initScreen = '/';
-
   static const String dashboardScreen = '/dashboard';
 }

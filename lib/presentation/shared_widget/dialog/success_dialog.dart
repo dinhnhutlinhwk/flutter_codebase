@@ -54,8 +54,8 @@ class SuccessDialog extends StatelessWidget {
                       color: stoke, blurRadius: 5.0, blurStyle: BlurStyle.outer)
                 ],
               ),
-              child: SVGView.svgAssets(AssetIcons.assistant,
-                  color: stoke, fit: BoxFit.contain),
+              // child: SVGView.svgAssets(AssetIcons.assistant,
+              //     color: stoke, fit: BoxFit.contain),
             ),
             SizedBox(height: 26.h),
             Text(

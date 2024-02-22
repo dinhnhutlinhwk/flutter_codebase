@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:my_base_code/presentation/base/base_repository.dart';
+import 'package:my_base_code/data/repository/base_repository.dart';
 import 'package:my_base_code/core/services/dependency_injection/injector.dart';
 import 'package:my_base_code/data/models/post_model.dart';
 import 'package:my_base_code/data/remote/base_api.dart';

@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: navigatorKey,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: LocaleConfig.supportedLocales,
-      locale: Get.deviceLocale,
+      locale: LocaleConfig.defaultLocale,
       initialBinding: InitBinding(),
       builder: (context, child) {
         return MediaQuery(
